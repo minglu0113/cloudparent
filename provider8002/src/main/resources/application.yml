@@ -1,0 +1,56 @@
+spring:
+  redis:
+    host: 144.34.240.118
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://144.34.240.118:3306/test
+    username: root
+    password: root
+
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+  rabbitmq:
+    host: 144.34.240.118
+    username: guest
+    password: guest
+  mail:
+    host: smtp.qq.com
+    username: 303086052@qq.com
+    password: ggcugpucdnaycbad
+  application:
+    name: springcloud
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.zhang.entityes
+management:
+  security:
+    enabled: false
+server:
+  port: 8002
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+#      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+
+  instance:
+    instance-id: microservicecloud-dept8002
+#访问路径可以显示IP地址
+    prefer-ip-address: true
+security:
+  basic:
+    enabled: true
+#security:
+#  user:
+#    password: root
+#    name: root
+com:
+  zhang:
+    test:
+      person: zhangluming
+
+
+
+
